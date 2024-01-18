@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-5">TO DO LIST</h1>
+    <div class="box-todo">
+        <div>
+            <input id="todoInput" type="text" value="" placeholder="scrivi un todo.." />
+            <button onclick="addTodo()">Aggiungi</button>
+        </div>
+        <div class="lista-todo">
+
+        </div>
+    </div>
+</div>
