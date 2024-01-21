@@ -48,9 +48,14 @@ body {
     padding:10px;
     border-bottom:2px solid green;    
     display: flex;
-    justify-content:space-between
+    justify-content:space-between;
+    align-items: center;
 }
 .doneTodo{
     text-decoration:line-through;
     opacity: 0.1;
+}
+.buttons {
+    display: flex;
+    flex-wrap: nowrap;
 }
