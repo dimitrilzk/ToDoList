@@ -7,7 +7,7 @@ function addTodo() {
         <div class="todoStyle" data-id="${todoCount}">
             <h2><span class="text-danger">${todoCount})</span> ${td}</h2>                               
                 <div class="buttons">
-                    <button class="editBtn btn btn-warning">Edit</button>                    
+                    <button onclick="editTodo(event)" class="editBtn btn btn-warning">Edit</button>                    
                     <button onclick="deleteTodo(event)" class="deleteBtn btn btn-danger">Delete</button>
                 </div>
             </div>
@@ -33,4 +33,13 @@ function undoTodo(e) {
     $(`[data-id=${count}] .undoBtn`).addClass("d-none");    
     $(`[data-id=${count}] .deleteBtn`).removeClass("d-none");
     $(`[data-id=${count}] .editBtn`).removeClass("d-none");
+}
+
+function editTodo(e) {
+    let count = $(e.target).closest("[data-id]").data("id");
+    let todo = $(`[data-id=${count}] h2`).text();
+    todo.slice(0, 1);
+    console.log(todo);
+    $(e.target).closest("h2").replaceWith(`<input type="text" value=${todo} />`)
+
 }
